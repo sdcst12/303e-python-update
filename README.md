@@ -7,6 +7,7 @@ Objectives:
 Data is never static. Data changes. One of the important aspects of a database is the ability to change the contents of it.  For example, your bank keeps a record of how much money you have in your savings and loans accounts. These need to be regularly updated as you add/remove money.  Your Doctor needs to keep track of your contact information and send you emails to your current phone number or email address.  You really don't want those going to the wrong place!
 
 Today we will look at updating the information in a record.
+Much of this README is the same as the last one, because the examples have not changed.
 
 
 Step 1: Build your Query
@@ -88,3 +89,50 @@ Example: search for all customers with a specific last name
 Optional Enhancements.
 * search for all users that partially match a specific last name
 * search for multiple criteria
+
+
+Part 2. (This part is new)
+Part A: Create a function that will accept 2 parameters: 
+* id: integer key value for the table entry to be changed
+* data: a dictionary of values to be updated
+
+
+Note that you will need to also have a function to allow you to find the id of the entry you want changed
+Part B:Create a function that will allow you to search for a current user based on a certain criteria.  The search should display the data for all of the matches so you can select the correct ID for the entry you want to update
+
+Part C: Create a function that will display the values for the entry that has been selected, and allow the user to choose a value to edit.  Once they are finished, they can send the data to Part A to update the values.  A menu system would be useful here.
+
+example:
+```
+ID         : 50
+First Name : Joe
+Last Name  : Mama
+Phone Num  : 6049222222
+Email      : joe@lunchbox.ca
+Address    : 950 53rd Street
+City       : Delta
+Postal Code: V4M3B7
+
+Choose:
+A: change first name  B: change last name  C: change phone number D: change email
+E: change address     F: change city       G: change city         H: change postal code
+I: update information
+> A
+Enter new First Name: Fred
+
+ID         : 50
+First Name : Fred
+Last Name  : Mama
+Phone Num  : 6049222222
+Email      : joe@lunchbox.ca
+Address    : 950 53rd Street
+City       : Delta
+Postal Code: V4M3B7
+
+Choose:
+A: change first name  B: change last name  C: change phone number D: change email
+E: change address     F: change city       G: change city         H: change postal code
+I: update information
+> I
+Information being written to database
+```
